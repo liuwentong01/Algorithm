@@ -1,19 +1,14 @@
-function QUICK(arr){
+function quickSort(arr, L, R){
   if(arr == null || arr.length < 2){
     return;
   }
-  quickSort(arr, 0, arr.length-1)
-}
-
-function quickSort(arr, L, R){
   if(L < R){
     var cur = dutchFlag(arr, L, R);
+    console.log(arr);
     quickSort(arr, L, cur[0]-1);
     quickSort(arr, cur[1]+1, R);
   }
-  
 }
-
 function dutchFlag(arr, L, R) {
   var less = L - 1, more = R;
   while (L < more) {
@@ -35,9 +30,8 @@ function swap(arr, i, j) {
 }
 
 function main(){
-  var arr = [2, 15, 26, 27, 44, 46, 48, 50, 3, 4, 5, 36, 38, 47, 19];
-  QUICK(arr);
-  console.log(1);
+  var arr = [2, 15, 26, 27, 44, 19, 46, 48, 50, 3, 4, 5, 36, 38, 47, 19];
+  quickSort(arr, 0, 15);
   console.log(arr);
 }
 main()

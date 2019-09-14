@@ -1,10 +1,7 @@
-function MERGESORT(arr) {
+function mergeSort(arr, l, r) {
   if (arr == null && arr.length < 2) {
     return;
   }
-  mergeSort(arr, 0, arr.length - 1);
-}
-function mergeSort(arr, l, r) {
   if (l == r) {
     return;
   }
@@ -36,7 +33,7 @@ function merge(arr, l, m, r) {
 }
 function main() {
   var arr = [3, 44, 38, 5, 47, 15, 36, 26, 27, 2, 46, 4, 19, 50, 48];
-  MERGESORT(arr);
+  mergeSort(arr, 0, arr.length-1);
   console.log(arr);
   console.log(sum);
 }

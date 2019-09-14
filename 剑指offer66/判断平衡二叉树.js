@@ -18,31 +18,25 @@
 //   return true;
 // }
 
-/* function TreeNode(x) {
-    this.val = x;
-    this.left = null;
-    this.right = null;
-} */
 var res = true;
-function IsBalanced_Solution(pRoot)
-{
-    getHeight(pRoot, 1, res);
-    return res;
+function IsBalanced_Solution(pRoot) {
+  getHeight(pRoot, 1, res);
+  return res;
 }
-function getHeight(head, level, res){
-    if(head == null){
-        return res;
-    }
-    var lH = getHeight(head, level+1, res);
-    if(!res){
-        return level;
-    }
-    var rH = getHeight(head, level+1, res);
-    if(!res){
-        return level;
-    }
-    if(Math.abs(lH - rH) > 1){
-        res = false;
-    }
-    return Math.max(lH, rH);
+function getHeight(head, level, res) {
+  if (head == null) {
+    return res;
+  }
+  var lH = getHeight(head, level + 1, res);
+  if (!res) {
+    return level;
+  }
+  var rH = getHeight(head, level + 1, res);
+  if (!res) {
+    return level;
+  }
+  if (Math.abs(lH - rH) > 1) {
+    res = false;
+  }
+  return Math.max(lH, rH);
 }
