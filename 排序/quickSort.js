@@ -1,7 +1,5 @@
 function quickSort(arr, L, R){
-  if(arr == null || arr.length < 2){
-    return;
-  }
+  if(arr == null || arr.length < 2)return;
   if(L < R){
     var cur = dutchFlag(arr, L, R);
     console.log(arr);

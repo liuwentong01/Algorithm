@@ -1,14 +1,13 @@
 function mergeSort(arr, l, r) {
-  if (arr == null && arr.length < 2) {
+  if (arr == null ||  arr.length < 2) {
     return;
   }
-  if (l == r) {
-    return;
-  }
+  if (l < r) {
+  
   var mid = Math.floor((l + r) / 2);
   mergeSort(arr, l, mid);
   mergeSort(arr, mid + 1, r);
-  merge(arr, l, mid, r);
+  merge(arr, l, mid, r);}
 }
 function merge(arr, l, m, r) {
   var help = new Array(r - l + 1);
